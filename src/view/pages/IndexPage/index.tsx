@@ -107,12 +107,12 @@ function Body() {
 }
 
 function BasicInfo() {
-  const [l, lSetter] = useState(14)
+  const [l, lSetter] = useState("14")
   return <>
     <p style={{ color: "white", paddingTop: "10px" }}>云南民族大学</p>
     <h3 style={{ color: "white", paddingTop: "10px" }}>雨花校区-1号门</h3>
     <p style={{ color: "white", paddingTop: "10px", paddingBottom: "5px" }}>近来14日健康打卡&nbsp;正常&nbsp;&nbsp;&gt;&nbsp;&nbsp;
-<span onClick={() => lSetter(prompt("缺卡几天？"))} style={{
+<span onClick={() => lSetter(prompt("缺卡几天？")!)} style={{
         border: "1px solid white",
         borderRadius: "10px",
         fontSize: "12px",
@@ -165,10 +165,10 @@ function InfoCard() {
         onChange={(files) => { avatarFilesSetter(files) }}
         multiple={false}></ImagePicker>
       <div>
-        <h3 onClick={() => nameSetter(prompt("修改姓名", name))} style={{ padding: "5px" }}>姓名：{name}</h3>
-        <h3 onClick={() => numSetter(prompt("修改学号", num))} style={{ padding: "5px" }}>学号：{num}</h3>
-        <h3 onClick={() => gradeSetter(prompt("修改年级", grade))} style={{ padding: "5px" }}>年级：{grade}级</h3>
-        <h3 onClick={() => sclassSetter(prompt("修改院系", sclass))} style={{ padding: "5px" }}>院系：{sclass}</h3>
+        <h3 onClick={() => nameSetter(prompt("修改姓名", name)!)} style={{ padding: "5px" }}>姓名：{name}</h3>
+        <h3 onClick={() => numSetter(prompt("修改学号", num)!)} style={{ padding: "5px" }}>学号：{num}</h3>
+        <h3 onClick={() => gradeSetter(prompt("修改年级", grade)!)} style={{ padding: "5px" }}>年级：{grade}级</h3>
+        <h3 onClick={() => sclassSetter(prompt("修改院系", sclass)!)} style={{ padding: "5px" }}>院系：{sclass}</h3>
       </div>
     </div>
   </Card>
