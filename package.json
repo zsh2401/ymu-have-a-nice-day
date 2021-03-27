@@ -1,5 +1,5 @@
 {
-  "name": "sz-rat-app",
+  "name": "ymu-have-a-nice-day",
   "version": "1.0.0",
   "sz_rat": {
     "version": "10.12.1",
@@ -38,6 +38,7 @@
     "@types/jest": "^26.0.20",
     "@types/lodash": "^4.14.168",
     "@types/nprogress": "^0.2.0",
+    "@types/qrcode.react": "^1.0.1",
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.0",
     "@types/react-loadable": "^5.5.4",
@@ -76,13 +77,16 @@
     "webpack-parallel-uglify-plugin": "^2.0.0"
   },
   "dependencies": {
+    "antd-mobile": "^2.3.4",
     "lodash": "^4.17.20",
     "nprogress": "^0.2.0",
     "offline-plugin": "^5.0.7",
+    "qrcode.react": "^1.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-keep-alive": "^2.5.2",
     "react-loading": "^2.0.3",
+    "react-modal": "^3.12.1",
     "react-router-dom": "^5.2.0",
     "react-use": "^17.1.0"
   }

@@ -19,3 +19,18 @@
 :global(.padding-safe-top){
     padding-top: env(safe-area-inset-top);
 }
+:global(.am-modal-content){
+    height: auto !important;
+}
+:global(body){
+    background-color: white;
+}
+:global(.am-modal-body){
+    height: auto !important;
+}
+:global(.am-navbar-light ){
+    color: black;
+}
+:global(.am-modal-button:last-child){
+    color: #EE8F4C  !important
+}

@@ -2,6 +2,7 @@
 // import "jquery"
 // import "bootstrap"
 
+import '!!style-loader!css-loader?modules=false!antd-mobile/dist/antd-mobile.css'
 import "./App.css"
 import React from 'react';
 import ReactDOM from 'react-dom';
