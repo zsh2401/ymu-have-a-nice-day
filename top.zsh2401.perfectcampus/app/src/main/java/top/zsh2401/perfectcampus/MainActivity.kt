@@ -8,9 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.webkit.ValueCallback
-import android.webkit.WebChromeClient
-import android.webkit.WebView
+import android.webkit.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -48,7 +46,20 @@ class MainActivity : AppCompatActivity() {
 
     val REQUEST_PERMISSION_CODE = 2401
     private fun loadWebview(){
-        this.web_view.loadUrl("https://coding-pages-bucket-148346-8528767-15123-549478-1252709330.cos-website.ap-shanghai.myqcloud.com")
+        web_view.webViewClient = object:WebViewClient(){
+            override fun shouldOverrideUrlLoading(
+                view: WebView?,
+                request: WebResourceRequest?
+            ): Boolean {
+                if(request?.url?.toString()?.indexOf("coding-pages-bucket-148346-8528767-15123-549478-1252709330.cos-website.ap-shanghai.myqcloud.com") != -1){
+                    view?.reload()
+                }else{
+                    view?.loadUrl(request!!.url.toString())
+                }
+                return true
+            }
+        }
+
         web_view.settings.javaScriptEnabled = true
         web_view.webChromeClient = object: WebChromeClient(){
 
@@ -66,6 +77,8 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
         }
+
+        this.web_view.loadUrl("https://coding-pages-bucket-148346-8528767-15123-549478-1252709330.cos-website.ap-shanghai.myqcloud.com")
     }
     var callback:ValueCallback<Array<Uri>>? = null
     val FILE_CHOOSER_RESULT_CODE = 2402
