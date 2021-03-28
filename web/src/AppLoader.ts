@@ -14,17 +14,9 @@ const installSwIfNeed = async () => {
     }).catch(registrationError => {
         console.log('SW registration failed: ', registrationError);
     });
-    // if ('serviceWorker' in navigator) {
-    //     window.addEventListener('load', () => {
-    //         // console.log("Service worker is being installed");
-    //         navigator.serviceWorker.register('/service-worker.js').then(registration => {
-    //             console.log('SW registered: ', registration);
-    //         }).catch(registrationError => {
-    //             console.log('SW registration failed: ', registrationError);
-    //         });
-    //     });
-    // }
+    (await navigator.serviceWorker.getRegistration())?.update()
 }
+
 const runApplication = (async () => {
     const app = await import("./App");
     app.default();
