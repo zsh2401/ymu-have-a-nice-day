@@ -78,6 +78,8 @@
   },
   "dependencies": {
     "antd-mobile": "^2.3.4",
+    "chinese-random-name": "^1.0.0",
+    "localforage": "^1.9.0",
     "lodash": "^4.17.20",
     "nprogress": "^0.2.0",
     "offline-plugin": "^5.0.7",
@@ -88,6 +90,7 @@
     "react-loading": "^2.0.3",
     "react-modal": "^3.12.1",
     "react-router-dom": "^5.2.0",
-    "react-use": "^17.1.0"
+    "react-use": "^17.1.0",
+    "sz-react-support": "^0.0.4"
   }
 }
