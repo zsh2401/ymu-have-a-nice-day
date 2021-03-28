@@ -13,7 +13,7 @@ export default function () {
     }, [reload])
     return <NavBar mode="light"
         leftContent={
-            <div >
+            <div>
                 <Icon onClick={reload} size="lg" type="left"></Icon>
                 <Icon onClick={clear} size="lg" type="cross"></Icon>
             </div>
