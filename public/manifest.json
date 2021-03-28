@@ -1,14 +1,15 @@
 {
   "name": "完美校园",
+  "short_name":"完美校园",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "256x256",
+      "src": "/icon.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "standalone"
 }

@@ -10,6 +10,7 @@
   "description": "An application powered by sz-rat",
   "main": "./scripts/server",
   "scripts": {
+    "deploy": "npm run build && node deploy.js",
     "test": "jest",
     "build": "cross-env TS_NODE_PROJECT=\"./scripts/tsconfig-for-webpack-config.json\" webpack --config ./scripts/webpack.config.prod.ts",
     "build:dev": "cross-env TS_NODE_PROJECT=\"./scripts/tsconfig-for-webpack-config.json\" webpack --config ./scripts/webpack.config.dev.ts",
@@ -45,6 +46,7 @@
     "@types/uglifyjs-webpack-plugin": "^1.1.0",
     "@types/webpack": "^4.41.26",
     "@types/webpack-bundle-analyzer": "^3.9.1",
+    "@types/workbox-webpack-plugin": "^5.1.6",
     "awesome-typescript-loader": "^5.2.1",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -73,14 +75,14 @@
     "webpack-bundle-analyzer": "^4.4.0",
     "webpack-cli": "4",
     "webpack-dev-server": "^3.11.2",
-    "webpack-parallel-uglify-plugin": "^2.0.0"
+    "webpack-parallel-uglify-plugin": "^2.0.0",
+    "workbox-webpack-plugin": "^6.1.2"
   },
   "dependencies": {
     "antd-mobile": "^2.3.4",
     "localforage": "^1.9.0",
     "lodash": "^4.17.20",
     "nprogress": "^0.2.0",
-    "offline-plugin": "^5.0.7",
     "qrcode.react": "^1.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

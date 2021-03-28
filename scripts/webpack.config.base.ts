@@ -1,10 +1,9 @@
 import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import OfflinePlugin from "offline-plugin"
+import WorkboxPlugin from "workbox-webpack-plugin"
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 const config: webpack.Configuration = {
 	entry: {
 		app: path.resolve(__dirname, '../src/AppLoader.ts'),
@@ -26,11 +25,6 @@ const config: webpack.Configuration = {
 				test: /\.(html)$/,
 				loader: "html-loader"
 			},
-
-			// {
-			// 	test: /\.(ejs)$/,
-			// 	loader: "ejs-loader"
-			// },
 
 			{
 				test: /\.css$/,
@@ -85,17 +79,19 @@ const config: webpack.Configuration = {
 			]
 		}),
 		new CleanWebpackPlugin(),
-		
+		// new OfflinePlugin(),
 		// new BundleAnalyzerPlugin({
 		// 	analyzerMode:"static"
 		// }),
-		// new OfflinePlugin({
-		// 	caches: "all",
-		// }),
+
 
 		//https://stackoverflow.com/questions/65018431/webpack-5-uncaught-referenceerror-process-is-not-defined
 		new webpack.ProvidePlugin({
 			process: 'process/browser',
+		}),
+
+		new WorkboxPlugin.GenerateSW({
+			skipWaiting: true
 		})
 	],
 
