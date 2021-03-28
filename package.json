@@ -10,7 +10,6 @@
   "description": "An application powered by sz-rat",
   "main": "./scripts/server",
   "scripts": {
-    "deploy": "gh-pages -d dist",
     "test": "jest",
     "build": "cross-env TS_NODE_PROJECT=\"./scripts/tsconfig-for-webpack-config.json\" webpack --config ./scripts/webpack.config.prod.ts",
     "build:dev": "cross-env TS_NODE_PROJECT=\"./scripts/tsconfig-for-webpack-config.json\" webpack --config ./scripts/webpack.config.dev.ts",
@@ -78,7 +77,6 @@
   },
   "dependencies": {
     "antd-mobile": "^2.3.4",
-    "chinese-random-name": "^1.0.0",
     "localforage": "^1.9.0",
     "lodash": "^4.17.20",
     "nprogress": "^0.2.0",
@@ -86,9 +84,7 @@
     "qrcode.react": "^1.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-keep-alive": "^2.5.2",
     "react-loading": "^2.0.3",
-    "react-modal": "^3.12.1",
     "react-router-dom": "^5.2.0",
     "react-use": "^17.1.0",
     "sz-react-support": "^0.0.4"
