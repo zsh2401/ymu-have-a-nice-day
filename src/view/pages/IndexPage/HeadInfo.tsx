@@ -34,7 +34,7 @@ export default function HeadInfo() {
     <div style={{
       marginTop: "-250px", width: "100%", height: "200px",
       zIndex: -10,
-      background: "linear-gradient(to bottom, #4DA16C, #BADECB)",
+      background: "linear-gradient(to bottom, #27B56B, #7FD3A7)",
       borderRadius: "0 0 100% 100%"
     }}>
     </div>

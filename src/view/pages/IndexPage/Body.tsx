@@ -16,15 +16,24 @@ export default function Body() {
 
   const fillTemp = useCallback(() => {
     const now = new Date();
-    Modal.alert(<h4>现场体温</h4>, <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-      <Icon style={{ background: "whitesmoke", color: "#EE8F4C", borderRadius: "8px" }} size="lg" type="left"></Icon>
-      <span style={{ background: "whitesmoke", marginLeft: "10px", marginRight: "10px", borderRadius: "8px", fontSize: "20px", width: "250px" }}>{randomTmp}</span>
-      <Icon style={{ background: "whitesmoke", color: "#EE8F4C", borderRadius: "8px" }} size="lg" type="right"></Icon>
+    Modal.alert(<h4>现场体温</h4>, <div>
+      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+        <Icon style={{ background: "whitesmoke", color: "#FF7F3E", borderRadius: "8px" }} size="lg" type="left"></Icon>
+        <span style={{ background: "whitesmoke", marginLeft: "10px", marginRight: "10px", borderRadius: "8px", fontSize: "20px", width: "250px" }}>{randomTmp}</span>
+        <Icon style={{ background: "whitesmoke", color: "#FF7F3E", borderRadius: "8px" }} size="lg" type="right"></Icon>
+      </div>
+      <p style={{
+        marginTop:"10px",
+        textAlign:"center",
+        color:"red",
+        fontSize:"12px"
+      }}>请务必如实填写现场体温</p>
+      
     </div>, [
       { text: '取消', onPress: () => { } },
       {
         text: '确认', onPress: () => {
-        
+
           tempSetter(randomTmp);
           testTimeStrSetter(`${now.getFullYear()}-${pad(now.getMonth() + 1, 2)}-${pad(now.getDate(), 2)} ${pad(now.getHours(), 2)}:${pad(now.getMinutes(), 2)}:${pad(now.getSeconds(), 2)}`);
         }
@@ -55,7 +64,7 @@ export default function Body() {
 
     <WhiteSpace />
     {temp === "0" ?
-      <Button onClick={fillTemp} style={{ background: "#EE8F4C", color: "white" }}>填写现场体温</Button> :
+      <Button onClick={fillTemp} style={{ background: "#FF7F3E", color: "white" }}>填写现场体温</Button> :
       <div style={{ paddingTop: "5px", paddingBottom: "5px", color: "white", textAlign: "center", backgroundColor: "#4DA16E" }}>
         <h1 style={{ padding: "0", margin: 0 }}>{temp}度</h1>
         <p>测量时间: {testTimeStr}</p>

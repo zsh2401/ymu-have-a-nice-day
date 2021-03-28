@@ -11,7 +11,6 @@ export default function InfoCard() {
     const DB_KEY_STUDENT_CLASS = "studentClass"
     const DB_KEY_STUDENT_ID = "studentId"
 
-
     const { state: studentName, setter: stuNameSetter } = useAsyncState<string>({
         initialState: "...",
         provider: async () => {
@@ -26,6 +25,7 @@ export default function InfoCard() {
             }
         }
     });
+
     const { state: studentId, setter: stuIdSetter } = useAsyncState<string>({
         initialState: "...",
         provider: async () => {
@@ -40,6 +40,7 @@ export default function InfoCard() {
             }
         }
     });
+
     const { state: studentGrade, setter: stuGradeSetter } = useAsyncState<string>({
         initialState: "...",
         provider: async () => {
@@ -60,11 +61,11 @@ export default function InfoCard() {
         provider: async () => {
             const KEY = DB_KEY_STUDENT_CLASS
             const DEFAULT_VALUE = "数学与计算机学院20级计算机科学与技术一班"
-            let name = await lf.getItem<string>(KEY);
+            let name = await lf.getItem<string>(KEY)
             if (name) {
                 return name
             } else {
-                await lf.setItem(KEY, DEFAULT_VALUE);
+                await lf.setItem(KEY, DEFAULT_VALUE)
                 return DEFAULT_VALUE
             }
         }
