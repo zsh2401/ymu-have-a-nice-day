@@ -78,12 +78,10 @@ const config: webpack.Configuration = {
 				}
 			]
 		}),
+		new webpack.DefinePlugin({
+			"CTIME": JSON.stringify(new Date().toLocaleString())
+		}),
 		new CleanWebpackPlugin(),
-		// new OfflinePlugin(),
-		// new BundleAnalyzerPlugin({
-		// 	analyzerMode:"static"
-		// }),
-
 
 		//https://stackoverflow.com/questions/65018431/webpack-5-uncaught-referenceerror-process-is-not-defined
 		new webpack.ProvidePlugin({

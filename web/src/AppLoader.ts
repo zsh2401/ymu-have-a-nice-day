@@ -1,20 +1,16 @@
 //Load dependencies in some way.
 //Async or sync↓
 import "!!style-loader!css-loader?modules=false!nprogress/nprogress.css"
-import OffliePluginRuntime from "workbox-webpack-plugin"
-import DebugMx from './sz-support/common/debug-mx'
 import nProgress from "nprogress"
-import { sleep } from "./sz-support/common"
-
 
 //Install service worker
 const installSwIfNeed = async () => {
-    navigator.serviceWorker.register('/service-worker.js').then(registration => {
-        console.log('SW registered: ', registration);
-    }).catch(registrationError => {
-        console.log('SW registration failed: ', registrationError);
-    });
-    (await navigator.serviceWorker.getRegistration())?.update()
+    try {
+        const registration = await navigator.serviceWorker.register('/service-worker.js')
+        console.log('SW registered: ', registration)
+    } catch (err) {
+        console.log('SW registration failed: ', err);
+    }
 }
 
 const runApplication = (async () => {
@@ -24,7 +20,6 @@ const runApplication = (async () => {
 
 (async () => {
     nProgress.start();
-    await sleep(100);
     await runApplication();
     nProgress.done();
     await installSwIfNeed();

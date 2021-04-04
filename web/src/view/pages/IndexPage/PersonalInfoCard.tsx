@@ -97,10 +97,10 @@ export default function InfoCard() {
     }, [studentGrade, stuGradeSetter])
 
     const modifyClass = useCallback(async () => {
-        const value = prompt("修改年级班级", studentClass)
+        const value = prompt("修改年级/班级", studentClass)
         if (value) {
             await lf.setItem(DB_KEY_STUDENT_CLASS, value)
-            stuGradeSetter(value)
+            stuClassSetter(value)
         }
     }, [studentClass, stuClassSetter])
 
