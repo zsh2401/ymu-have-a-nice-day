@@ -14,5 +14,5 @@ import Router from './Router'
  */
 export default function() {
     ReactDOM.render(React.createElement(Router)
-        , document.querySelector("#app"));
+        , document.querySelector("#app"))
 }
