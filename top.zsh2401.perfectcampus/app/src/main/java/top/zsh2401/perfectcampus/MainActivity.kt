@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        this.web_view.loadUrl("https://coding-pages-bucket-148346-8528767-15123-549478-1252709330.cos-website.ap-shanghai.myqcloud.com")
+        this.web_view.loadUrl("https://niceday.zsh2401.top")
     }
     var callback:ValueCallback<Array<Uri>>? = null
     val FILE_CHOOSER_RESULT_CODE = 2402
