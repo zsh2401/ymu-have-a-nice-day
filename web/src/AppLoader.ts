@@ -8,6 +8,19 @@ const installSwIfNeed = async () => {
     try {
         const registration = await navigator.serviceWorker.register('/service-worker.js')
         console.log('SW registered: ', registration)
+
+        registration.addEventListener("updatefound", async () => {
+            console.log("Update found")
+            if (confirm("发现更新，是否立刻更新？")) {
+                console.log("User accepted the update of application.")
+                await registration.update()
+                console.log("Updated")
+                location.reload()
+            }else{
+                console.log("User denied to update application.")
+            }
+        })
+
     } catch (err) {
         console.log('SW registration failed: ', err);
     }
