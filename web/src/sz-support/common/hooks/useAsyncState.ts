@@ -39,6 +39,7 @@ export default function useAsyncState<S>(options: UseAsyncStateOptions<S>):
     let promiseResove: (a: S) => void;
     let promiseReject: (r: any) => void;
     const promise = new Promise<S>((a, b) => {
+        //@ts-ignore
         a = promiseResove;
         b = promiseReject;
     });
