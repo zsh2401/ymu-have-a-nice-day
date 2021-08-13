@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect } from "react"
-import { Icon, Modal, NavBar } from "antd-mobile"
+import React, { useCallback } from "react"
+import { Icon, NavBar } from "antd-mobile"
 import { useState } from "react"
-import { showAbout, showAboutAfterUpdated } from "./util"
+import { showAbout } from "../../../common/util"
 import lf from "localforage"
 
 export default function () {
@@ -9,11 +9,12 @@ export default function () {
     const [clickTimes, clickTimesSetter] = useState(0)
     const [isOut, isOutSetter] = useState(true)
 
-    const reload = useCallback(() => {
+    const onClickBack = useCallback(() => {
         window.location.reload()
     }, [])
-    
-    const click = useCallback(() => {
+
+    const onClickNavbar = useCallback(() => {
+        clickTimesSetter(0)
         clickTimesSetter(clickTimes + 1)
         if ((clickTimes + 1) % 7 === 0) {
             showAbout()
@@ -21,19 +22,18 @@ export default function () {
         }
     }, [clickTimes, clickTimesSetter])
 
-    const clear = useCallback(() => {
+    const onClickCross = useCallback(() => {
         lf.clear()
-        reload()
-    }, [reload])
+        onClickBack()
+    }, [onClickBack])
 
-    return <NavBar onClick={click} mode="light"
+    return <NavBar  mode="light"
         leftContent={
             <div >
-                <Icon onClick={reload} size="lg" type="left"></Icon>
-                <Icon onClick={clear} size="lg" type="cross"></Icon>
+                <Icon onClick={onClickBack} size="lg" type="left"></Icon>
+                <Icon onClick={onClickCross} size="lg" type="cross"></Icon>
             </div>
         }
-
     ><p onClick={() => {
         isOutSetter(!isOut)
     }}>{isOut ? "我要出" : "我要入"}</p> </NavBar>

@@ -4,14 +4,16 @@ import QRCode from "qrcode.react";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useCallback } from 'react';
-import { pad, toReadable } from "./util";
+import { pad, showAbout, toReadable } from "../../../common/util";
 
 export default function Body() {
   const QR_CONTENT = "这种爱恋持续了那么久，而我一直在等你的回信。我的思念似乎说出口就会消失，仿佛微苦的巧克力。你经过我的身旁如同云朵，你的回答已被我知晓。你向我道着告别转身离去，我的爱恋，无论如何也终究传不到你。";
   const [temp, tempSetter] = useState("0");
   const [testTimeStr, testTimeStrSetter] = useState("");
   const [lastTime, lastTimeSetter] = useState(2 * 60 * 60);
-
+  const onClickQRCode = useCallback(() => {
+    showAbout()
+  }, [])
   const randomTmp = (Math.random() * 0.5 + 36).toFixed(1)
 
   const fillTemp = useCallback(() => {
@@ -23,12 +25,12 @@ export default function Body() {
         <Icon style={{ background: "whitesmoke", color: "#FF7F3E", borderRadius: "8px" }} size="lg" type="right"></Icon>
       </div>
       <p style={{
-        marginTop:"10px",
-        textAlign:"center",
-        color:"red",
-        fontSize:"12px"
+        marginTop: "10px",
+        textAlign: "center",
+        color: "red",
+        fontSize: "12px"
       }}>请务必如实填写现场体温</p>
-      
+
     </div>, [
       { text: '取消', onPress: () => { } },
       {
@@ -56,7 +58,7 @@ export default function Body() {
       flexDirection: "row",
       justifyContent: "center"
     }}>
-      <QRCode size={180} value={QR_CONTENT} />
+      <QRCode onClick={onClickQRCode} size={180} value={QR_CONTENT} />
     </div>
 
     <h3 style={{ padding: "10px", textAlign: "center" }}>出示给学校相关人员，扫一扫核验信息</h3>

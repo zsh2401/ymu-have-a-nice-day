@@ -1,20 +1,19 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es5",
-    "allowJs": true,
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": false,
     "esModuleInterop": false,
-    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "removeComments": true,
-    "strictNullChecks": true,
-    "experimentalDecorators":true,
-    "strictBindCallApply": true,
-    "noImplicitAny": true,
-    "noImplicitReturns":true,
-    "allowSyntheticDefaultImports":true
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
   },
-  "include": ["./src/*", "src/app/server.ts"],
-  "exclude": ["node_modules"]
+  "include": ["./src"]
 }

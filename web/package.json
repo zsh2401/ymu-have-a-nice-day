@@ -1,6 +1,6 @@
 {
   "name": "ymu-have-a-nice-day",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "sz_rat": {
     "version": "10.12.1",
     "vname": "Chrish GL",
@@ -10,9 +10,11 @@
   "description": "An application powered by sz-rat",
   "main": "./scripts/server",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
     "deploy": "npm run build && node deploy.js",
     "test": "jest",
-    "build": "cross-env TS_NODE_PROJECT=\"./scripts/tsconfig-for-webpack-config.json\" webpack --config ./scripts/webpack.config.prod.ts",
     "build:dev": "cross-env TS_NODE_PROJECT=\"./scripts/tsconfig-for-webpack-config.json\" webpack --config ./scripts/webpack.config.dev.ts",
     "server": "ts-node ./scripts/server/index.ts",
     "start": "cross-env TS_NODE_PROJECT=\"./scripts/tsconfig-for-webpack-config.json\" webpack serve --config ./scripts/webpack.config.dev.ts",
@@ -47,6 +49,7 @@
     "@types/webpack": "^4.41.26",
     "@types/webpack-bundle-analyzer": "^3.9.1",
     "@types/workbox-webpack-plugin": "^5.1.6",
+    "@vitejs/plugin-react-refresh": "^1.3.6",
     "awesome-typescript-loader": "^5.2.1",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -71,6 +74,7 @@
     "typescript": "^4.1.3",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.1",
+    "vite": "^2.4.4",
     "webpack": "5.21.2",
     "webpack-bundle-analyzer": "^4.4.0",
     "webpack-cli": "4",

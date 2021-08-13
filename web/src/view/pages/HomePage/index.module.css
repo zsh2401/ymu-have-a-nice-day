@@ -1,0 +1,15 @@
+#main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#head{
+    flex-grow: 0;
+}
+#center{
+    flex-grow: 1;
+    background-color: red;
+}
+#bottom{
+    flex-grow: 0;
+}

@@ -1,6 +1,6 @@
 //Load dependencies in some way.
 //Async or sync↓
-import "!!style-loader!css-loader?modules=false!nprogress/nprogress.css"
+import "nprogress/nprogress.css"
 import nProgress from "nprogress"
 
 //Install service worker
@@ -11,14 +11,16 @@ const installSwIfNeed = async () => {
 
         registration.addEventListener("updatefound", async () => {
             console.log("Update found")
-            if (confirm("发现更新，是否立刻更新？")) {
-                console.log("User accepted the update of application.")
-                await registration.update()
-                console.log("Updated")
-                location.reload()
-            }else{
-                console.log("User denied to update application.")
-            }
+            await registration.update()
+            // location.reload()
+            // if (confirm("发现更新，是否立刻更新？")) {
+            //     console.log("User accepted the update of application.")
+            //     await registration.update()
+            //     console.log("Updated")
+            //     location.reload()
+            // }else{
+            //     console.log("User denied to update application.")
+            // }
         })
 
     } catch (err) {
@@ -27,8 +29,8 @@ const installSwIfNeed = async () => {
 }
 
 const runApplication = (async () => {
-    const app = await import("./App");
-    app.default();
+    const app = await import("./App")
+    app.default()
 });
 
 (async () => {
