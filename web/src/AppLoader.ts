@@ -6,7 +6,7 @@ import nProgress from "nprogress"
 //Install service worker
 const installSwIfNeed = async () => {
     try {
-        const registration = await navigator.serviceWorker.register('/service-worker.js')
+        const registration = await navigator.serviceWorker.register('/sw.js')
         console.log('SW registered: ', registration)
 
         registration.addEventListener("updatefound", async () => {

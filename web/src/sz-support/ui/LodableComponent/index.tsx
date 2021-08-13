@@ -1,6 +1,7 @@
 import nProgress from 'nprogress';
 import React from 'react'
-import { IStdProps, useAsyncState } from '../../common';
+import IStdProps from "../../common/IStdProps"
+import {  useAsyncState } from '../../common';
 import DefaultLoading from "./DefaultLoading"
 export interface LoadableComponentProps extends IStdProps {
 
