@@ -18,8 +18,9 @@ async function pwa() {
 }
 
 async function runApplication(){
-    const app = await import("./App")
-    app.default()
+    alert("考虑到最新疫情防控形式，此软件暂时停止使用。\n就这样，随便吧，就算眼泪掉下来。")
+    // const app = await import("./App")
+    // app.default()
 }
 
 (async () => {
