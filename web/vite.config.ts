@@ -5,6 +5,7 @@ import { VitePWA } from "vite-plugin-pwa"
 export default defineConfig({
   plugins: [
     reactRefresh(),
+
     VitePWA({
       manifest: {
         name: "完美校园",
@@ -31,9 +32,11 @@ export default defineConfig({
       localsConvention: "camelCase"
     }
   },
+
   esbuild: {
     define: {
       CTIME: JSON.stringify(new Date().toString())
     }
   }
+  
 })

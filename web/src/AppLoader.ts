@@ -1,26 +1,15 @@
-//Load dependencies in some way.
-//Async or sync↓
 import "nprogress/nprogress.css"
 import nProgress from "nprogress"
 
 //Install service worker
-const installSwIfNeed = async () => {
+async function pwa() {
     try {
-        const registration = await navigator.serviceWorker.register('/sw.js')
+        const registration = await navigator.serviceWorker.register('./sw.js')
         console.log('SW registered: ', registration)
-
         registration.addEventListener("updatefound", async () => {
             console.log("Update found")
             await registration.update()
-            // location.reload()
-            // if (confirm("发现更新，是否立刻更新？")) {
-            //     console.log("User accepted the update of application.")
-            //     await registration.update()
-            //     console.log("Updated")
-            //     location.reload()
-            // }else{
-            //     console.log("User denied to update application.")
-            // }
+            console.log("Updated")
         })
 
     } catch (err) {
@@ -28,15 +17,15 @@ const installSwIfNeed = async () => {
     }
 }
 
-const runApplication = (async () => {
+async function runApplication(){
     const app = await import("./App")
     app.default()
-});
+}
 
 (async () => {
     nProgress.start();
     await runApplication();
     nProgress.done();
-    await installSwIfNeed();
+    await pwa();
 })();
 
