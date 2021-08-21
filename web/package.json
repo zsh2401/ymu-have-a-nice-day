@@ -8,7 +8,7 @@
     "repo": "https://github.com/zsh2401/sz-rat"
   },
   "description": "An application powered by sz-rat",
-  "main": "./scripts/server",
+  "main": "./src/AppLoader.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
