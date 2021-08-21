@@ -1,7 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
 //@ts-expect-error
-import css from "./index.css"
+import css from "./index.module.css"
 import ResponsiveRatioWrapper from '../ResponsiveRatioWrapper';
 export interface BilibiliVideoProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     src: string;
