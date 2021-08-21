@@ -13,12 +13,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "deploy": "npm run build && node deploy.js",
-    "test": "jest",
-    "build:dev": "cross-env TS_NODE_PROJECT=\"./scripts/tsconfig-for-webpack-config.json\" webpack --config ./scripts/webpack.config.dev.ts",
-    "server": "ts-node ./scripts/server/index.ts",
-    "start": "cross-env TS_NODE_PROJECT=\"./scripts/tsconfig-for-webpack-config.json\" webpack serve --config ./scripts/webpack.config.dev.ts",
-    "start:prod": "cross-env TS_NODE_PROJECT=\"./scripts/tsconfig-for-webpack-config.json\" webpack serve --config ./scripts/webpack.config.prod.ts"
+    "start": "npm run build && npm run serve",
+    "deploy": "npm run build && node deploy.js"
   },
   "keywords": [
     "react",
@@ -29,7 +25,6 @@
   "author": "zsh2401",
   "license": "MIT",
   "devDependencies": {
-    "@types/connect-history-api-fallback": "^1.3.5",
     "@types/gh-pages": "^3.2.0",
     "@types/lodash": "^4.14.172",
     "@types/nprogress": "^0.2.0",
@@ -39,9 +34,6 @@
     "@types/react-loadable": "^5.5.6",
     "@types/react-router-dom": "^5.1.8",
     "@vitejs/plugin-react-refresh": "^1.3.6",
-    "concurrently": "^6.2.1",
-    "connect-history-api-fallback": "^1.6.0",
-    "cross-env": "^7.0.3",
     "gh-pages": "^3.2.3",
     "ts-node": "^10.2.1",
     "typescript": "^4.3.5",
