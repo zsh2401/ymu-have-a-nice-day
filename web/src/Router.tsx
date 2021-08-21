@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import useHistory from './sz-support/common/hooks/useHistory';
 import { Router, Route, Switch } from 'react-router';
 import ProvisionalPass from './view/pages/ProvisionalPass';
 import NotFoundPage from './view/pages/NotFoundPage';
-import { showAboutAfterUpdated } from './common/util';
-import HomePage from "./view/pages/HomePage"
 //Application's router
 export default function AppRouter() {
 
