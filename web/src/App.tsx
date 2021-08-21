@@ -5,7 +5,7 @@
 import "antd/dist/antd.css"
 import 'antd-mobile/dist/antd-mobile.css'
 import "./App.css"
-import "rsuite/dist/styles/rsuite-default.css"
+// import "rsuite/dist/styles/rsuite-default.css"
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from './Router'

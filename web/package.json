@@ -53,7 +53,6 @@
     "antd-mobile": "^2.3.4",
     "indexof": "^0.0.1",
     "localforage": "^1.10.0",
-    "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
     "qrcode.react": "^1.0.1",
     "react": "^17.0.2",
@@ -61,7 +60,6 @@
     "react-loading": "^2.0.3",
     "react-router-dom": "^5.2.0",
     "react-use": "^17.2.4",
-    "rsuite": "^4.10.2",
     "sz-react-support": "^0.0.5"
   }
 }
