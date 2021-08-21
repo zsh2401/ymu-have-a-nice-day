@@ -7,6 +7,7 @@ export default defineConfig({
     reactRefresh(),
 
     VitePWA({
+      filename: "service-worker.js",
       manifest: {
         name: "完美校园",
         short_name: "完美校园",
@@ -38,5 +39,5 @@ export default defineConfig({
       CTIME: JSON.stringify(new Date().toString())
     }
   }
-  
+
 })
