@@ -1,0 +1,12 @@
+.card{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.info-box{
+    display:flex ;
+    flex-direction: row;
+}
+.student-text-info{
+    font-size: 15px;
+}

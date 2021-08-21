@@ -1,7 +1,7 @@
 import React from 'react'
 import IStdProps  from '../../common/IStdProps'
 //@ts-expect-error
-import css from "./index.css"
+import css from "./index.module.css"
 export interface Props extends IStdProps {
 
 }

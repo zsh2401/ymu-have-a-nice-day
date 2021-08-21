@@ -4,7 +4,7 @@ import QRCode from "qrcode.react";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useCallback } from 'react';
-import { pad, showAbout, toReadable } from "../../../common/util";
+import { pad, showAbout, toReadable } from "../../../../common/util";
 
 export default function Body() {
   const QR_CONTENT = "这种爱恋持续了那么久，而我一直在等你的回信。我的思念似乎说出口就会消失，仿佛微苦的巧克力。你经过我的身旁如同云朵，你的回答已被我知晓。你向我道着告别转身离去，我的爱恋，无论如何也终究传不到你。";

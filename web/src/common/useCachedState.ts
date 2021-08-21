@@ -10,7 +10,7 @@ export default function useCachedState<T>(key: string, initialValue: T | (() => 
         })
     }, [key, initialValue])
     
-    const refresh = useCallback(() => {
+    const reload = useCallback(() => {
         (async () => {
             const v = await lf.getItem<T>(key)
             if (v === null) {
@@ -22,8 +22,8 @@ export default function useCachedState<T>(key: string, initialValue: T | (() => 
     }, [key])
 
     useEffect(() => {
-        refresh()
+        reload()
     }, [key])
 
-    return [value, cachedSetter, refresh]
+    return [value, cachedSetter, reload]
 }

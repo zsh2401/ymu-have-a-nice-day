@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import { Icon, NavBar } from "antd-mobile"
 import { useState } from "react"
-import { showAbout } from "../../../common/util"
+import { showAbout } from "../../../../common/util"
 import lf from "localforage"
 
 export default function () {

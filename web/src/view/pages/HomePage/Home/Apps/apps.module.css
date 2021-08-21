@@ -1,0 +1,15 @@
+.app-icon{
+    width: 45px;
+    height: 45px;
+}
+.app-box{
+    margin-bottom: 10px;
+}
+.app-box-inner{
+    /* font-size: 11px; */
+    text-align: center;
+}
+.app-label{
+    font-size: 11px;
+    margin: 3px;
+}

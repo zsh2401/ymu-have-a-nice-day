@@ -6,9 +6,10 @@ import HeadInfo from './HeadInfo'
 export default function () {
 
   return <div>
-    <NavBar />
+    <h1>ppass</h1>
+    {/* <NavBar />
     <HeadInfo />
     <WhiteSpace /><WhiteSpace />
-    <Body />
+    <Body /> */}
   </div>
 }
