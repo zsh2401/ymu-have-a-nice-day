@@ -44,7 +44,8 @@ export interface AppData {
 
 }
 
-const { Provider, Consumer } = React.createContext<AppData>(null!)
+export const AppDataContext = React.createContext<AppData>(null!)
+const { Provider, Consumer } = AppDataContext
 export const AppDataConsumer = Consumer;
 
 function App() {

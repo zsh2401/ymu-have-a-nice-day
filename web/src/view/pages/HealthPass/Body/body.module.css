@@ -10,3 +10,13 @@
 .student-text-info{
     font-size: 15px;
 }
+.dbar{
+    position: absolute;
+    right: -10px;
+    bottom: 60px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 20px;
+    color: white;
+    border-radius: 10px;
+}

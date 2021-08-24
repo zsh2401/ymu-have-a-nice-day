@@ -3,8 +3,8 @@ import lf from "localforage";
 import { useAsyncState } from "sz-react-support";
 import { Card, ImagePicker } from "antd-mobile";
 import { useState } from 'react';
-import useCachedState from '../../../../common/useCachedState';
-import useDialog from '../../../../common/useDialog';
+import useCachedState from '../../../../../common/useCachedState';
+import useDialog from '../../../../../common/useDialog';
 
 
 export default function InfoCard() {

@@ -23,3 +23,9 @@ body{
 .am-modal-button:last-child{
     color: #EE8F4C  !important
 }
+.main-color{
+    color:#EE8F4C
+}
+.bg-main-color{
+    background-color: #EE8F4C;
+}

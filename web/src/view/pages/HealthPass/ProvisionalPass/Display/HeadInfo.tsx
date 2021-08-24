@@ -2,8 +2,8 @@ import React from 'react';
 import { WhiteSpace, WingBlank } from "antd-mobile";
 import { useState } from 'react';
 import InfoCard from './PersonalInfoCard';
-import useCachedState from '../../../../common/useCachedState';
-import useDialog from '../../../../common/useDialog';
+import useCachedState from '../../../../../common/useCachedState';
+import useDialog from '../../../../../common/useDialog';
 import { useCallback } from 'react';
 interface BasicInfoProps {
   gateName: string;
