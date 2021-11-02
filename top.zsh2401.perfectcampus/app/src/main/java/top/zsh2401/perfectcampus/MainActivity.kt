@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if(checkPermission()){
+            Log.v("MainActivity","Loading")
             loadWebview()
         }
         supportActionBar?.hide()
@@ -62,7 +63,6 @@ class MainActivity : AppCompatActivity() {
 
         web_view.settings.javaScriptEnabled = true
         web_view.webChromeClient = object: WebChromeClient(){
-
             override fun onShowFileChooser(
                 webView: WebView?,
                 filePathCallback: ValueCallback<Array<Uri>>?,
