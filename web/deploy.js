@@ -5,5 +5,6 @@ ghpages.publish("dist", {
     repo: "https://e.coding.net/studio2401/toys/niceday.zsh2401.top.git"
 },
     (err) => {
-        console.log(err)
+        if (err)
+            console.log(err)
     })
