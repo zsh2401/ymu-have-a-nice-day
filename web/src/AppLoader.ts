@@ -18,7 +18,9 @@ async function pwa() {
 }
 
 async function runApplication() {
-    alert("考虑到最新疫情防控形势，此软件暂时停止使用。\n只有活着，才能拥有美好的一天，我会回来的！\n就这样，随便吧，就算眼泪掉下来。")
+    setTimeout(() => {
+        alert("不知道是谁把这玩意儿泄露出来的，搞得满学校人用，我去TM都别用了！")
+    }, 1);
     // const app = await import("./App")
     // app.default()
 }
